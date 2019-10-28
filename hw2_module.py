@@ -10,10 +10,10 @@ def read_df_from_url(url):
 #function to test the properties of a dataframe
 
 def test_create_dataframe(dataframe, list_colnames):
-    for col in dataframe:
-        type0 = type(col[0])
-        for row in dataframe[col]:
-            if type(row) == type0:
-                continue
-    if list(dataframe.columns) == list_colnames and dataframe.shape[0] >= 10:
+     if list(dataframe.columns) == list_colnames and dataframe.shape[0] >= 10:
+        for col in dataframe:
+            type0 = type(dataframe[col][0])
+            for row in dataframe.index:
+                if type(dataframe[col][row]) is not type0:
+                    return        
         return True
