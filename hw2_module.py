@@ -15,5 +15,5 @@ def test_create_dataframe(dataframe, list_colnames):
             type0 = type(dataframe[col][0])
             for row in dataframe.index:
                 if type(dataframe[col][row]) is not type0:
-                    return        
+                    return False        
         return True
